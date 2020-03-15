@@ -8,3 +8,12 @@
 #include <queue>
 #include <iomanip>
 #include <fstream>
+
+namespace SHNMBA004{
+	
+	//constructor
+	HuffmanTree::HuffmanTree(){
+		std::shared_ptr<HuffmanNode> root = nullptr;
+	}
+	
+}
