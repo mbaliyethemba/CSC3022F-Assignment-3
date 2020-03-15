@@ -49,4 +49,8 @@ namespace SHNMBA004{
 	HuffmanNode * HuffmanNode::getLeftChild(){
 		return left.get();
 	}
+	
+	HuffmanNode * HuffmanNode::getRightChild(){
+		return right.get();
+	}
 }
