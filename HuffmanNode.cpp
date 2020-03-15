@@ -73,4 +73,16 @@ namespace SHNMBA004{
 		rhs.frequency = -1;
 	}
 	
+	//copy assignment
+	HuffmanNode & HuffmanNode::operator = (const HuffmanNode & rhs){
+		if(this != &rhs){
+			character = rhs.character;
+			frequency = rhs.frequency;
+			left = rhs.left;
+			right = rhs.right;
+		}
+		return * this;
+	}
+	
+	
 }
