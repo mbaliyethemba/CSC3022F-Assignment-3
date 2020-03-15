@@ -33,4 +33,8 @@ namespace SHNMBA004{
 	void HuffmanNode::setLeftChild(HuffmanNode lc){
 		left = std::make_shared<HuffmanNode>(lc);
 	}
+	
+	void HuffmanNode::setRightChild(HuffmanNode rc){
+		right = std::make_shared<HuffmanNode>(rc);
+	}
 }
