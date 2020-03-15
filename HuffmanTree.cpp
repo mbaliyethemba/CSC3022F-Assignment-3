@@ -102,12 +102,12 @@ namespace SHNMBA004{
 	std::unordered_map<char, int> HuffmanTree::getCharMap(std::string inputFileName, std::vector<std::string> *inputStrings){
 		std::unordered_map<char,int> charMap;
 		std::ifstream infile(inputFileName);
-		std:string line;
+		std::string line;
 		
 		//read in and count the frequency each character
 		if(infile.is_open()){
 			while(getline(infile, line)){
-				inputStrings -> push)back(line);
+				inputStrings -> push_back(line);
 				for(char character: line){
 					if (charMap.find(character) != charMap.end()){
 						charMap.at(character) += 1;
