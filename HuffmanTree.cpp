@@ -59,4 +59,32 @@ namespace SHNMBA004{
 		}
 	}
 	
+	void HuffmanTree::compression(std::string inputFile, std::string outputFile){
+		using namespace std;
+		int nChars;
+		int nOneZero;
+		ofstream output;
+		output.open(outputFile + ".txt");
+		ifstream input(inputFile);
+		char c;
+		
+		while(input.get(c)){
+			nChars++;
+			string bit = cTable[c].c_str();
+			output << bit;
+			nOneZero += bit.length();
+			cout << bit << ": " << bit.length() << endl;
+		}
+		input.close();
+		output.open(outputFile + ".hdr");
+		output << "Size: " << cTable.size() << endl;
+		for(auto iterator : cTable){
+			output << iterator.first << ": " << iterator.second << endl;
+		}
+		output.close();
+		double compression = nOneZero / (nChars * 8);
+		cout << "Compression ratio: " << compression << endl;
+	}
+	
+	
 }
