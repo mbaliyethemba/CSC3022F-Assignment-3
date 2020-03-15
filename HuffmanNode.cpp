@@ -21,4 +21,8 @@ namespace SHNMBA004{
 		right = nullptr;
 		frequency = -1;
 	}
+	
+	void HuffmanNode::setChar(char c){
+		character = c;
+	}
 }
