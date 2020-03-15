@@ -29,4 +29,8 @@ namespace SHNMBA004{
 	void HuffmanNode::setFrequency(int f){
 		frequency = f;
 	}
+	
+	void HuffmanNode::setLeftChild(HuffmanNode lc){
+		left = std::make_shared<HuffmanNode>(lc);
+	}
 }
