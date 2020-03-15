@@ -21,4 +21,30 @@ namespace SHNMBA004{
 		root = nullptr;
 	}
 	
+	void HuffmanTree::CreateTree(std::unordered_map<char,int> & map){
+		using namespace std;
+		for(auto iterator : map){
+			HuffmanNode node;
+			shared_ptr<HuffmanNode> nPtr = make_shared<HuffmanNode>(node);
+			node.setCharacter(iterator.first);
+			node.setFrequency(iterator.second);
+			pQ.push(node);
+		}
+		
+		while(pQ.size() > 1){
+			HuffmanNode A = pQ.top();
+			pQ.pop();
+			HuffmanNode B = pQ.top();
+			pQ.pop();
+			HuffmanNode total;
+			total.setCharacter(0);
+			total.setFrequency(A.getFrequency() + B.getFrequency());
+			total.setLeftChild(A);
+			total.setRightChild(B);
+			pQ.push(total);
+		}
+		root = make_shared<HuffmanNode> (pQ.top());
+		traverse(root.get(),"");
+	}
+	
 }
