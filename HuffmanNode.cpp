@@ -22,7 +22,11 @@ namespace SHNMBA004{
 		frequency = -1;
 	}
 	
-	void HuffmanNode::setChar(char c){
+	void HuffmanNode::setCharacter(char c){
 		character = c;
+	}
+	
+	void HuffmanNode::setFrequency(int f){
+		frequency = f;
 	}
 }
