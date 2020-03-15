@@ -97,4 +97,31 @@ namespace SHNMBA004{
 			Display(current->getLeftChild(), indent + 4);
 		}
 	}
+	
+	// Generate and return a map of all the characters in the input file
+	std::unordered_map<char, int> HuffmanTree::getCharMap(std::string inputFileName, std::vector<std::string> *inputStrings){
+		std::unordered_map<char,int> charMap;
+		std::ifstream infile(inputFileName);
+		std:string line;
+		
+		//read in and count the frequency each character
+		if(infile.is_open()){
+			while(getline(infile, line)){
+				inputStrings -> push)back(line);
+				for(char character: line){
+					if (charMap.find(character) != charMap.end()){
+						charMap.at(character) += 1;
+					}
+					else{
+						charMap.insert({character, 1});
+					}
+				}
+			}
+			infile.close();
+		}
+		else{
+			std::cout << "Can't open file" << std::endl;
+		}
+		return charMap;
+	}
 }
