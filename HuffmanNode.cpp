@@ -14,4 +14,11 @@ namespace SHNMBA004{
 		std::shared_ptr<HuffmanNode> left = nullptr;
 		std::shared_ptr<HuffmanNode> right = nullptr;
 	}
+	
+	//Destructor
+	HuffmanNode::~HuffmanNode(){
+		left = nullptr;
+		right = nullptr;
+		frequency = -1;
+	}
 }
