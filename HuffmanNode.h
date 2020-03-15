@@ -29,7 +29,7 @@ namespace SHNMBA004{
 			HuffmanNode (const HuffmanNode & rhs); //copy constructor
 			HuffmanNode (HuffmanNode && rhs); //move constructor
 			HuffmanNode & operator = (const HuffmanNode & rhs); //copy assignment
-			HuffmanNode & operatoe = (HuffmanNode && rhs); //move assignment operator
+			HuffmanNode & operator = (HuffmanNode && rhs); //move assignment operator
 	};
 }
 
