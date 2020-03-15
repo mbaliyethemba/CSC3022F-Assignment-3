@@ -19,6 +19,15 @@ namespace SHNMBA004{
 				}
 			}
 	};
+	class HuffmanTree{
+		private:
+			std::shared_ptr<HuffmanNode> root;
+			std::priority_queue<HuffmanNode, std::vector<HuffmanNode>,Compare> pQ;
+			std::unordered_map<char, std::string> cTable;
+			
+		public:
+			
+	};
 }
 
 #endif /*HUFFMANTREE_H_ */
