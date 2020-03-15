@@ -37,4 +37,8 @@ namespace SHNMBA004{
 	void HuffmanNode::setRightChild(HuffmanNode rc){
 		right = std::make_shared<HuffmanNode>(rc);
 	}
+	
+	char HuffmanNode::getCharacter(){
+		return character;
+	}
 }
