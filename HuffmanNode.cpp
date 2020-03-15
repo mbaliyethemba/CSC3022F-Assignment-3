@@ -45,4 +45,8 @@ namespace SHNMBA004{
 	int HuffmanNode::getFrequency(){
 		return frequency;
 	}
+	
+	HuffmanNode * HuffmanNode::getLeftChild(){
+		return left.get();
+	}
 }
