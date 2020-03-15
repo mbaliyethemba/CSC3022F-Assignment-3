@@ -86,5 +86,15 @@ namespace SHNMBA004{
 		cout << "Compression ratio: " << compression << endl;
 	}
 	
-	
+	void HuffmanTree::Display(HuffmanNode * current,int indent){
+		using namespace std;
+		if(current != nullptr){
+			Display(current->getRightChild(), indent + 4);
+			if(indent > 0){
+				cout<<setw(indent)<<" ";
+			}
+			cout << current->getFrequency() << "," << current->getCharacter() << endl;
+			Display(current->getLeftChild(), indent + 4);
+		}
+	}
 }
