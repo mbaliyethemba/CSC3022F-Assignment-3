@@ -53,4 +53,13 @@ namespace SHNMBA004{
 	HuffmanNode * HuffmanNode::getRightChild(){
 		return right.get();
 	}
+	
+	//copy constructor
+	HuffmanNode::HuffmanNode (const HuffmanNode & rhs){
+		character = rhs.character;
+		freq = rhs.frequency;
+		left = rhs.left;
+		right = rhs.right;
+	}
+	
 }
