@@ -9,7 +9,7 @@ namespace SHNMBA004{
 			//stored in node
 			char character; 
 			//frequency of occurence
-			int freq;
+			int frequency;
 			//left node
 			std::shared_ptr<HuffmanNode> left;
 			//right node
