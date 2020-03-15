@@ -84,5 +84,19 @@ namespace SHNMBA004{
 		return * this;
 	}
 	
+	//move assignment
+	HuffmanNode & HuffmanNode::operator = (HuffmanNode && rhs){
+		if(this !=rhs){
+			character = std::move(rhs.character);
+			frequency = std::rhs.frequency;
+			left = rhs.left;
+			right = rhs.right;
+			rhs.left = nullptr;
+			rhs.right = nullptr;
+			rhs.frequency = -1;
+		}
+		return * this;
+	}
+	
 	
 }
