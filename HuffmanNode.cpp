@@ -41,4 +41,8 @@ namespace SHNMBA004{
 	char HuffmanNode::getCharacter(){
 		return character;
 	}
+	
+	int HuffmanNode::getFrequency(){
+		return frequency;
+	}
 }
