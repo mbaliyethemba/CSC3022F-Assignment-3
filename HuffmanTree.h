@@ -26,7 +26,13 @@ namespace SHNMBA004{
 			std::unordered_map<char, std::string> cTable;
 			
 		public:
-			
+			HuffmanTree(); //constructor
+			~HuffmanTree(); //destructor
+			void CreateTree(std::unordered_map<char,int> & map);
+			void Display(HuffmanNode * current, int indent);
+			void traverse(HuffmanNode * current, std::string bitString);
+			void compression(std::string inputFile, std::string outputFile);
+			static std::unordered_map<char,int> getCharMap(std::string inputFilename, std::vector<std::string> *inputStrings);
 	};
 }
 
