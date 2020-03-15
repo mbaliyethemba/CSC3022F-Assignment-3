@@ -62,4 +62,15 @@ namespace SHNMBA004{
 		right = rhs.right;
 	}
 	
+	//move constructor
+	HuffmanNode::HuffmanNode(HuffmanNode && rhs){
+		character = rhs.character;
+		this->frequency = rhs.frequency;
+		left = rhs.left;
+		right = rhs.right;
+		rhs.left = nullptr;
+		rhs.right = nullptr;
+		rhs.frequency = -1;
+	}
+	
 }
