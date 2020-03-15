@@ -57,7 +57,7 @@ namespace SHNMBA004{
 	//copy constructor
 	HuffmanNode::HuffmanNode (const HuffmanNode & rhs){
 		character = rhs.character;
-		freq = rhs.frequency;
+		frequency = rhs.frequency;
 		left = rhs.left;
 		right = rhs.right;
 	}
@@ -86,9 +86,9 @@ namespace SHNMBA004{
 	
 	//move assignment
 	HuffmanNode & HuffmanNode::operator = (HuffmanNode && rhs){
-		if(this !=rhs){
+		if(this != &rhs){
 			character = std::move(rhs.character);
-			frequency = std::rhs.frequency;
+			frequency = rhs.frequency;
 			left = rhs.left;
 			right = rhs.right;
 			rhs.left = nullptr;
