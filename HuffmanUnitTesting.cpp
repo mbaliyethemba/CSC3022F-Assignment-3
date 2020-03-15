@@ -34,4 +34,30 @@ TEST_CASE("Huffman tree building and destroying - all methods","[HuffmanTree]"){
         REQUIRE( int(map.at('d')) == 1);
         REQUIRE( int(map.at('.')) == 1);
 	}
+	
+	SECTION("NodeQueue correct", "[node, queue]"){
+		std::unordered_map<char,int> map;
+		std::priority_queue<HuffmanNode, std::vector<HuffmanNode>,Compare> pQ;
+		ifstream input(file);
+		char c;
+		if(input.is_open()){
+			while(input.get(c)){
+				map[c] += 1;
+				}
+			huffmanTree.CreateTree(map);
+		}
+		
+		for(auto iterator : map){
+			HuffmanNode node;
+			shared_ptr<HuffmanNode> nPtr = make_shared<HuffmanNode>(node);
+			node.setCharacter(iterator.first);
+			node.setFrequency(iterator.second);
+			pQ.push(node);
+		}
+		input.close();
+		REQUIRE(!pQ.empty());
+		REQUIRE(pQ.size() == 9);
+		HuffmanNode A = pQ.top();
+		REQUIRE(A.getFrequency() == 1);
+	}
 }
