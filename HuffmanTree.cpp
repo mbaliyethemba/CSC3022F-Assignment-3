@@ -47,4 +47,16 @@ namespace SHNMBA004{
 		traverse(root.get(),"");
 	}
 	
+	void HuffmanTree::traverse(HuffmanNode * current,std::string bitString){
+		using namespace std;
+		if(current){
+			traverse(current->getLeftChild(),bitString+"0");
+			if(current->getCharacter() !=0){
+				cout<< current -> getCharacter() << " the bitstream is " << bitString << endl;
+				cTable[current->getCharacter()] = bitString;
+			}
+			traverse(current->getRightChild(),bitString+"1");
+		}
+	}
+	
 }
