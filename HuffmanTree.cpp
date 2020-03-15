@@ -16,4 +16,9 @@ namespace SHNMBA004{
 		std::shared_ptr<HuffmanNode> root = nullptr;
 	}
 	
+	//destructor
+	HuffmanTree::~HuffmanTree(){
+		root = nullptr;
+	}
+	
 }
