@@ -64,7 +64,9 @@ namespace SHNMBA004{
 		int nChars;
 		int nOneZero;
 		ofstream output;
+		ofstream outputa;
 		output.open(outputFile + ".txt");
+		outputa.open(outputFile + ".hdr");
 		ifstream input(inputFile);
 		char c;
 		
@@ -76,12 +78,12 @@ namespace SHNMBA004{
 			cout << bit << ": " << bit.length() << endl;
 		}
 		input.close();
-		output.open(outputFile + ".hdr");
-		output << "Size: " << cTable.size() << endl;
+		outputa << "Size: " << cTable.size() << endl;
 		for(auto iterator : cTable){
-			output << iterator.first << ": " << iterator.second << endl;
+			outputa << iterator.first << ": " << iterator.second << endl;
 		}
 		output.close();
+		outputa.close();
 		double compression = nOneZero / (nChars * 8);
 		cout << "Compression ratio: " << compression << endl;
 	}
