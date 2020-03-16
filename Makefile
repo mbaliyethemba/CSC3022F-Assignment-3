@@ -18,7 +18,12 @@ HuffmanNode.o: HuffmanNode.cpp HuffmanNode.h
 driver.o: driver.cpp
 		$(CC) $(CCFLAGS) driver.cpp -c
 
-		
+HuffmanUnitTesting.o: HuffmanUnitTesting.cpp HuffmanUnitTesting.h
+		$(CC) $(CCFLAGS) HuffmanUnitTesting.cpp -c
+
+test: HuffmanTree.o HuffmanNode.o driver.o HuffmanUnitTesting.o
+		$(CC) $(CCFLAGS) HuffmanTree.o HuffmanNode.o driver.o HuffmanUnitTesting.o -o huffenTest $(LIBS)
+
 clean: 
 		@rm -f *.o
 		@rm -f huffencode
