@@ -5,6 +5,8 @@
 #include <vector>
 #include <string>
 #include "catch.hpp"
+#include <iostream>
+#include <stdio.h>
 
 using namespace std;
 using namespace SHNMBA004;
@@ -96,7 +98,7 @@ TEST_CASE("Huffman tree building and destroying - all methods","[HuffmanTree]"){
 			huffmanTree.CreateTree(map);
 		}
 		input.close();
-		REQUIRE(map.size()==9);
+		REQUIRE(map.size()==10);
 	}
 	
 	SECTION("Testing queue"){
@@ -119,5 +121,26 @@ TEST_CASE("Huffman tree building and destroying - all methods","[HuffmanTree]"){
 		}
 		input.close();
 		REQUIRE(map.size()==pQ.size());
+	}
+	
+	//Last 10% checking if compression works
+	SECTION("Testing queue"){
+		std::unordered_map<char,int> map;
+		ifstream input(file);
+		char c;
+		if(input.is_open()){
+			while(input.get(c)){
+				map[c] += 1;
+				}
+			huffmanTree.CreateTree(map);
+			huffmanTree.compression(file, "output");
+		}
+		input.close();
+		std::string comp = "101010000101110111010111100000111111001001";
+		std::ifstream file2("output.txt");
+		std::string comp2;
+		std::getline(file2,comp2);
+		int result = comp.compare(comp2);
+		REQUIRE( result == 0);
 	}
 }
