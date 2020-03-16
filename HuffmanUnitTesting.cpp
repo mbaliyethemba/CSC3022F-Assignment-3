@@ -84,4 +84,18 @@ TEST_CASE("Huffman tree building and destroying - all methods","[HuffmanTree]"){
 		REQUIRE(root.getFrequency() == 12);
 		REQUIRE(root.getCharacter() == '$');
 	}
+	
+	SECTION("map has correct size after reading file"){
+		std::unordered_map<char,int> map;
+		ifstream input(file);
+		char c;
+		if(input.is_open()){
+			while(input.get(c)){
+				map[c] += 1;
+				}
+			huffmanTree.CreateTree(map);
+		}
+		input.close();
+		REQUIRE(map.size()==9);
+	}
 }
