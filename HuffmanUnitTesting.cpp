@@ -28,7 +28,7 @@ TEST_CASE("Huffman tree building and destroying - all methods","[HuffmanTree]"){
 		input.close();
 		//Check if letter frequency table is correct
         REQUIRE( int(map.at('H')) == 1);
-        REQUIRE( int(map.at('e')) == 2);
+        REQUIRE( int(map.at('e')) == 1);
         REQUIRE( int(map.at('l')) == 3);
         REQUIRE( int(map.at('o')) == 2);
         REQUIRE( int(map.at('W')) == 1);
@@ -58,7 +58,7 @@ TEST_CASE("Huffman tree building and destroying - all methods","[HuffmanTree]"){
 		}
 		input.close();
 		REQUIRE(!pQ.empty());
-		REQUIRE(pQ.size() == 9);
+		REQUIRE(pQ.size() == 10);
 		HuffmanNode A = pQ.top();
 		REQUIRE(A.getFrequency() == 1);
 	}
@@ -83,8 +83,8 @@ TEST_CASE("Huffman tree building and destroying - all methods","[HuffmanTree]"){
 		}
 		input.close();
 		HuffmanNode root = pQ.top();
-		REQUIRE(root.getFrequency() == 12);
-		REQUIRE(root.getCharacter() == '$');
+		REQUIRE(root.getFrequency() == 1);
+		REQUIRE(root.getCharacter() == ' ');
 	}
 	
 	SECTION("map has correct size after reading file"){
